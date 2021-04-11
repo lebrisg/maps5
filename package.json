@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/lebrisg/maps5/issues"
   },
-  "homepage": "https://github.com/lebrisg/maps5#readme"
+  "homepage": "https://github.com/lebrisg/maps5#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.6",
+    "morgan": "^1.10.0",
+    "prom-client": "^13.1.0"
+  }
 }
