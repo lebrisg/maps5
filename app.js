@@ -1,6 +1,6 @@
 var http = require("http");
 var morgan = require("morgan");
-var express = require("express");
+var app = require("express");
 var ejs = require("ejs");
 var mongodb = require("mongodb");
 var promclient = require("prom-client");
