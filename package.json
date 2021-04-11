@@ -1,0 +1,19 @@
+{
+  "name": "maps5",
+  "version": "1.0.0",
+  "description": "Maps display",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lebrisg/maps5.git"
+  },
+  "author": "Gilles LE BRIS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lebrisg/maps5/issues"
+  },
+  "homepage": "https://github.com/lebrisg/maps5#readme"
+}
