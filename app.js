@@ -34,7 +34,7 @@ if(!config.mongoURL) {
 }
 
 app.get("/", function(request, response) {
-  response.render("index");
+  response.render("index.html");
 });
 
 // Expose our metrics at the default URL for Prometheus
