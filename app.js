@@ -1,10 +1,13 @@
 var http = require("http");
 var morgan = require("morgan");
 var app = require("express");
-var ejs = require("ejs");
+var express = require("ejs");
 var mongodb = require("mongodb");
 var promclient = require("prom-client");
 var config = require("./config");
+
+// Assign app variable
+app = express();
 
 // Enable prom-client to expose default application metrics
 const collectDefaultMetrics = promclient.collectDefaultMetrics;
