@@ -70,12 +70,20 @@
 	  //   }).addTo(map);
 	  //});
 	  var popup = L.popup();
-          map.on('click', function(e) {
+          //map.on('click', function(e) {
+          //  popup
+          //    .setLatLng(e.latlng)
+          //    .setContent(e.latlng.toString())
+          //    .openOn(map)
+          //});
+          function onMapClick(e) {
             popup
               .setLatLng(e.latlng)
-              .setContent(e.latlng.toString())
-              .openOn(map)
-          });
+              .setContent("You clicked the map at " + e.latlng.toString())
+              .openOn(mymap);
+          }
+          mymap.on('click', onMapClick);
+
 	</script>
 </body>
 </html>
