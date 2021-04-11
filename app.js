@@ -27,6 +27,12 @@ app.use(morgan("combined"));
 // Display initial configuration
 config.display();
 
+// Test MongoDB config
+if(!config.mongoURL) {
+  console.log("Bad config parameter!");
+  return;
+}
+
 app.get("/", function(request, response) {
   response.render("index");
 });
