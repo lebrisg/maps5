@@ -36,6 +36,7 @@
           integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
           crossorigin=""></script>
 	<script src="https://cdn.jsdelivr.net/npm/leaflet-easybutton@2/src/easy-button.js"></script> 
+        <script src="https://github.com/w8r/Leaflet.Modal/blob/master/dist/L.Modal.js"></script>
 	<script>
 	  var map = L.map('map').setView([48.806594, 8.000306], 7);
 	  var markerLayerGroup = L.layerGroup().addTo(map);
@@ -68,13 +69,45 @@
 	  //    }
 	  //   }).addTo(map);
 	  //});
-	  var popup = L.popup();
-          map.on('click', function(e) {
-            popup
-              .setLatLng(e.latlng)
-              .setContent(e.latlng.toString())
-              .openOn(map)
+	  //var popup = L.popup();
+          //map.on('click', function(e) {
+          //  popup
+          //    .setLatLng(e.latlng)
+          //    .setContent(e.latlng.toString())
+          //    .openOn(map)
+          //});
+    map.fire('modal', {
+      title: 'Custom header',
+      content: '<ul>' + (new Array(5)).join('<li>Content line</li>') + '</ul>',
+      template: ['<div class="modal-header"><h2>{title}</h2></div>',
+        '<hr>',
+        '<div class="modal-body">{content}</div>',
+        '<div class="modal-footer">',
+        '<button class="topcoat-button--large {OK_CLS}">{okText}</button>',
+        '<button class="topcoat-button--large {CANCEL_CLS}">{cancelText}</button>',
+        '</div>'
+      ].join(''),
+
+      okText: 'Ok',
+      cancelText: 'Cancel',
+      OK_CLS: 'modal-ok',
+      CANCEL_CLS: 'modal-cancel',
+
+      width: 300,
+
+      onShow: function(evt) {
+        var modal = evt.modal;
+        L.DomEvent
+          .on(modal._container.querySelector('.modal-ok'), 'click', function() {
+            alert('you pressed ok');
+            modal.hide();
+          })
+          .on(modal._container.querySelector('.modal-cancel'), 'click', function() {
+            alert('You pressed cancel');
+            modal.hide();
           });
+      }
+    });
 
 	</script>
 </body>
