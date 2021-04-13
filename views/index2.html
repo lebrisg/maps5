@@ -76,8 +76,8 @@
           //    .setContent(e.latlng.toString())
           //    .openOn(map)
           //});
-    //map.fire('modal', {
-    map.openModal({
+  map.on('click', function(e) {
+    map.fire('modal', {
       title: 'Custom header',
       content: '<ul>' + (new Array(5)).join('<li>Content line</li>') + '</ul>',
       template: ['<div class="modal-header"><h2>{title}</h2></div>',
@@ -109,7 +109,7 @@
           });
       }
     });
-
+  });
 	</script>
 </body>
 </html>
