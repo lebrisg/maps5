@@ -37,6 +37,10 @@ app.get("/", function(request, response) {
   response.render("index.html");
 });
 
+app.get("/index2", function(request, response) {
+  response.render("index2.html");
+});
+
 app.get("/modal", function(request, response) {
   response.render("modal.html");
 });
