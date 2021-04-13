@@ -3,14 +3,14 @@ var morgan = require("morgan");
 var express = require("express");
 var ejs = require("ejs");
 var mongodb = require("mongodb");
-var promclient = require("prom-client");
+var promClient = require("prom-client");
 var config = require("./config");
 
 // Assign app variable
 app = express();
 
 // Enable prom-client to expose default application metrics
-const collectDefaultMetrics = promclient.collectDefaultMetrics;
+const collectDefaultMetrics = promClient.collectDefaultMetrics;
 
 // Define a custom prefix string for application metrics
 collectDefaultMetrics({ prefix: 'maps5:' });
@@ -37,10 +37,14 @@ app.get("/", function(request, response) {
   response.render("index.html");
 });
 
+app.get("/modal", function(request, response) {
+  response.render("modal.html");
+});
+
 // Expose our metrics at the default URL for Prometheus
 app.get('/metrics', async (req, res) => {
-  res.set('Content-Type', promclient.register.contentType);
-  res.send(await promclient.register.metrics());
+  res.set('Content-Type', promClient.register.contentType);
+  res.send(await promClient.register.metrics());
 });
 
 // Start http server
