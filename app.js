@@ -37,14 +37,6 @@ app.get("/", function(request, response) {
   response.render("index.html");
 });
 
-app.get("/index2", function(request, response) {
-  response.render("index2.html");
-});
-
-app.get("/modal", function(request, response) {
-  response.render("modal.html");
-});
-
 // Expose our metrics at the default URL for Prometheus
 app.get('/metrics', async (req, res) => {
   res.set('Content-Type', promClient.register.contentType);
