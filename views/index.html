@@ -80,7 +80,7 @@
           map.on('click', function(e) {
             map.fire('modal', {
               title: 'Details',
-              content: '<ul>' + '</ul>',
+              //content: '<ul>' + '</ul>',
               template: ['<div class="modal-header"><h2>{title}</h2></div>',
               '<hr>',
               '<form action"" method="post">',
@@ -96,8 +96,8 @@
               '<label for="date">Date</label><br />',
               '<input type="date" id="date" />', 
               '</p>',
-              '<div class="modal-body">{content}</div>',
-              '<div class="modal-footer">',
+              //'<div class="modal-body">{content}</div>',
+              //'<div class="modal-footer">',
               '<button class="topcoat-button--large {OK_CLS}" type="submit">{okText}</button>',
               '<button class="topcoat-button--large {CANCEL_CLS}">{cancelText}</button>',
               '</div>'
