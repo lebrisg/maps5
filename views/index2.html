@@ -77,53 +77,53 @@
           //    .setContent(e.latlng.toString())
           //    .openOn(map)
           //});
-  map.on('click', function(e) {
-    map.fire('modal', {
-      title: 'Details',
-      content: '<ul>' + '</ul>',
-      template: ['<div class="modal-header"><h2>{title}</h2></div>',
-        '<hr>',
-        '<form action"" method="post">',
-        '<p>',
-        '<label for="name">Name</label><br />',
-        '<input type="name" id="name" />', 
-        '</p>',
-        '<p>',
-        '<label for="address">Address</label><br />',
-        '<input type="address" id="address" />', 
-        '</p>',
-        '<p>',
-        '<label for="date">Date</label><br />',
-        '<input type="date" id="date" />', 
-        '</p>',
-        '<div class="modal-body">{content}</div>',
-        '<div class="modal-footer">',
-        '<button class="topcoat-button--large {OK_CLS}" type="submit">{okText}</button>',
-        '<button class="topcoat-button--large {CANCEL_CLS}">{cancelText}</button>',
-        '</div>'
-      ].join(''),
+          map.on('click', function(e) {
+            map.fire('modal', {
+              title: 'Details',
+              content: '<ul>' + '</ul>',
+              template: ['<div class="modal-header"><h2>{title}</h2></div>',
+              '<hr>',
+              '<form action"" method="post">',
+              '<p>',
+              '<label for="name">Name</label><br />',
+              '<input type="name" id="name" />', 
+              '</p>',
+              '<p>',
+              '<label for="address">Address</label><br />',
+              '<input type="address" id="address" />', 
+              '</p>',
+              '<p>',
+              '<label for="date">Date</label><br />',
+              '<input type="date" id="date" />', 
+              '</p>',
+              '<div class="modal-body">{content}</div>',
+              '<div class="modal-footer">',
+              '<button class="topcoat-button--large {OK_CLS}" type="submit">{okText}</button>',
+              '<button class="topcoat-button--large {CANCEL_CLS}">{cancelText}</button>',
+              '</div>'
+              ].join(''),
 
-      okText: 'Ok',
-      cancelText: 'Cancel',
-      OK_CLS: 'modal-ok',
-      CANCEL_CLS: 'modal-cancel',
+              okText: 'Ok',
+              cancelText: 'Cancel',
+              OK_CLS: 'modal-ok',
+              CANCEL_CLS: 'modal-cancel',
 
-      width: 300,
+              width: 300,
 
-      onShow: function(evt) {
-        var modal = evt.modal;
-        L.DomEvent
-          .on(modal._container.querySelector('.modal-ok'), 'click', function() {
-            alert('you pressed ok');
-            modal.hide();
-          })
-          .on(modal._container.querySelector('.modal-cancel'), 'click', function() {
-            alert('You pressed cancel');
-            modal.hide();
+              onShow: function(evt) {
+                var modal = evt.modal;
+                L.DomEvent
+                  .on(modal._container.querySelector('.modal-ok'), 'click', function() {
+                    alert('you pressed ok');
+                    modal.hide();
+                  })
+                  .on(modal._container.querySelector('.modal-cancel'), 'click', function() {
+                    alert('You pressed cancel');
+                    modal.hide();
+                  });
+              }
+            });
           });
-      }
-    });
-  });
 	</script>
 </body>
 </html>
